@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import app.vercel.danfelogarPorfolios.horoscoapp.databinding.FragmentPalistryBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PalmistryFragment : Fragment() {
     //when you defined var that start with "_" is because you don't access from another class
     private var _binding: FragmentPalistryBinding? = null

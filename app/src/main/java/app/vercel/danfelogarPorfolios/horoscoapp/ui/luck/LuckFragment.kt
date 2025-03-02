@@ -6,9 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import app.vercel.danfelogarPorfolios.horoscoapp.databinding.FragmentLuckBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LuckFragment : Fragment() {
+
     //when you defined var that start with "_" is because you don't access from another class
     private var _binding: FragmentLuckBinding? = null
     private val binding get() = _binding!!
