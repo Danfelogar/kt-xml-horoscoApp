@@ -22,12 +22,24 @@ android {
     }
 
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
+            resValue("string","HoroscoApp", "Danfelogar Dev" )
+
+            buildConfigField("String","BASE_URL", "\"https://newastro.vercel.app\"")
+        }
+
+        getByName("debug") {
+            isMinifyEnabled = false
+            isDebuggable = true
+            resValue("string", "HoroscoApp","[Debug Mode] Danfelogar Dev")
+            buildConfigField("String","BASE_URL", "\"https://newastro.vercel.app\"")
         }
     }
     compileOptions {
@@ -39,7 +51,9 @@ android {
     }
     //available methods for access all ui with ids
     buildFeatures {
+        resValues = true
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -54,6 +68,13 @@ dependencies {
     //DaggerHilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.48")
+
+    //Retrofit
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    //interceptors of response
+    implementation("com.squareup.okhttp3:logging-interceptor:4.3.1")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

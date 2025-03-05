@@ -17,14 +17,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:fontFamily="@font/dancing"
             android:layout_width="wrap_content"
-            android:textColor="@color/secondary"
-            android:text="@string/horoscope"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_height="wrap_content"/>
+            style="@style/Title"
+            android:text="@string/horoscope"
+     />
 
     </FrameLayout>
 
@@ -38,7 +36,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:navGraph="@navigation/main_graph"/>
+        app:navGraph="@navigation/main_graph" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNav"
